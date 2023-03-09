@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %} اضافه منتج{% endblock %}
+
+{%block content%}
+<div class="container-fluid w-100 p-5 text-center">
+    <div class="row">
+        <div class="col-12 ">
+<h3>اضافه منتج</h3>
+                        {% load bootstrap4 %}                
+                        <form class="w-100" method="post" enctype="multipart/form-data">
+                         {% csrf_token %}
+                        {% bootstrap_form Addquntity_form %}
+                         {% buttons %}
+                        <button type="submit" class="btn btn-success w-50 text-center m-5">اضافه</button>
+                        {% endbuttons %}
+                      </form>
+                    </div>
+                </div>
+                </div>
+{%endblock%}
