@@ -32,7 +32,7 @@
           <div class="d-flex align-items-center justify-content-center">
             <a href="" class="navbar-brand ms-lg-5">
               <h1 class="m-0 display-4 title">
-                <span class="fci">كليه حاسبات ومعلومات الزقازيق
+                <span class="fci">كليه حاسبات ومعلومات جامعه الزقازيق
               </h1>
             </a>
           </div>
@@ -44,7 +44,7 @@
         href=""
         class="navbar-brand d-flex d-lg-none"
       >
-        <h1 class="m-0 display-4 text-white">كليه حاسبات ومعلومات الزقازيق</h1>
+        <h1 class="m-0 display-4 text-white">كليه حاسبات ومعلومات  جامعه الزقازيق</h1>
       </a>
       <button
         class="navbar-toggler"
@@ -71,6 +71,11 @@
         class="nav-item nav-link text-light text-uppercase "
         > جميع المنتجات</a
       >
+      {%if user.is_superuser%}
+      <a
+      href="{% url 'admin:index' %}"
+      class="nav-item nav-link text-light text-uppercase ">   الادمن</a>
+      {%endif%}
       {%if user.is_authenticated %}
       <a
       href="{%url 'logout'%}"
@@ -84,6 +89,8 @@
       >  تسجيل دخول</a
     >
     {%endif%}
+
+
     </div>
   </div>
       </div>

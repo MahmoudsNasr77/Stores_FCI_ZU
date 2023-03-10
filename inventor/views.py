@@ -3,7 +3,7 @@ from django.urls import reverse
 from .models import invntor
 from .form import Addquntity
 def invtory_render(request):
-    data=invntor.objects.all()
+    data=invntor.objects.all().order_by('-data')
     context={"data":data}
     return render(request,'inventor.html',context)
 def add(request):
