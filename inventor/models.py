@@ -35,4 +35,11 @@ class invntor(models.Model):
     def __str__(self) -> str:
         return self.importer
 
+    def save(self, *args, **kwargs):
+        # Decrease the quantity of the book when it is borrowed
+        self.items.quntity -= self.quntity
+        self.items.save()
+        super().save(*args, **kwargs)
+
+
 
