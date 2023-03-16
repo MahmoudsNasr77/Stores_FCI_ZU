@@ -1,14 +1,18 @@
 import re
 from django import forms
-from .models import invntor
+from .models import items,paydata,invntor
 class Addquntity(forms.ModelForm):
     class Meta:    
         model=invntor
-        fields =('name','quntity','importer',)
+        fields ="__all__"
     labels  = {
-        'name':'اسم المنتج', 
         'quntity':'الكميه ', 
         'exporter':'المورد', 
         'importer':"المنصرف له"
         }
+class pay_request(forms.ModelForm):
+    class Meta:    
+        model=paydata
+        fields ="__all__"
+  
 

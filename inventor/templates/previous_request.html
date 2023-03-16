@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<title>{% block title %}الاذونات السابقه{% endblock %}</title>
+
+{%block content%}
+<div class="container">
+<h1 class="text-center p-2">اذن الصرف</h1>
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="text-muted p-3">اسم المستلم :<span class="text-dark">{{previous_request.payer_name}}</span></h3>
+        <h3 class="text-muted p-3"> الكميه :<span class="text-dark">{{previous_request.quntity}}</span></h3>
+        <h3 class="text-muted p-3"> العنصر :<span class="text-dark">{{previous_request.items}}</span></h3>
+        <h3 class="text-muted p-3">اسم المسلم :<span class="text-dark">{{previous_request.exporter}}</span></h3>
+        <h3 class="text-muted p-3"> تاريخ التسليم :<span class="text-dark">{{previous_request.data}}</span></h3>
+        <h3 class="text-muted p-3">وقت التسليم :<span class="text-dark">{{previous_request.time}}</span></h3>
+        <h3 class="text-muted p-3">امضاء :</h3>
+    </div>
+
+</div>
+<button class="text-center btn btn-success p-3 m-2 printbtn" onclick="window.print()">اطبع الصفحه</button>
+
+</div>
+{%endblock%}

@@ -79,10 +79,11 @@ WSGI_APPLICATION = 'managment.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'inventory',
+        'NAME': 'inventory_zag_db',
         'USER': 'postgres',
         'PASSWORD': '2001',
         'HOST': 'localhost',

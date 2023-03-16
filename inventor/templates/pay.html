@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
-{% block title %} اضافه منتج{% endblock %}
+{% block title %}  اذن الصرف{% endblock %}
 
 {%block content%}
 <div class="container-fluid w-100 p-5 text-center ">
     <div class="row">
         <div class="col-12 ">
 
-            {{quntity}}
+            <h4><a class="text-decoration-underline" href="{%url 'inventor:previous_request_list'%}">عرض الاذونات السابقه</a></h4>
    
-<h3>اضافه منتج</h3>
+<h3>عمل اذن </h3>
                         {% load bootstrap4 %}                
                         <form class="w-100 p-2" method="post" enctype="multipart/form-data">
                          {% csrf_token %}
                         
-                        {% bootstrap_form Addquntity_form %}
+                        {% bootstrap_form pay_request_form %}
                          {% buttons %}
-                        <button type="submit" class="btn btn-success w-30  text-center m-3 p-3">اضافه</button>
+                        <button type="submit" class="btn btn-success w-30  text-center m-3 p-3">عمل اذن</button>
                         {% endbuttons %}
                       </form>
                     </div>

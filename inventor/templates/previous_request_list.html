@@ -1,45 +1,52 @@
 {% extends 'base.html' %}
-<title>{% block title %}المنتجات{% endblock %}</title>
+<title>{% block title %}الاذونات السابقه{% endblock %}</title>
 
 {%block content%}
 <div class="container-fluid w-100 p-5 text-center">
+  <h2>الاذونات السابقه</h2>
     <table class="table table-striped table-dark text-center">
         <thead>
           <tr>
-            <th scope="col">اسم المنتج</th>
+            <th scope="col">اسم المستلم</th>
             <th scope="col">الكميه </th>
-            <th scope="col">المورد</th>
-		    <th scope="col">تاريخ الاضافه  </th>
-		  <th scope="col">وقت الاضافه</th>
+            <th scope="col">العنصر</th>
+            <th scope="col">اسم المسلم</th>
+		    <th scope="col">تاريخ التسليم  </th>
+		  <th scope="col">وقت التسليم</th>
+
 
           </tr>
         </thead>
         <tbody>
-          {%for i in quntity%}
+          {%for i in paydatalist%}
           <tr>
-            <th scope="col">{{i.name}}</th>
+            <th scope="col">{{i.payer_name}}</th>
             <th scope="col"> {{i.quntity}}</th>
+            <th scope="col">{{i.items}}</th>
             <th scope="col">{{i.exporter}}</th>
             <th scope="col">{{i.data}} </th>
             <th scope="col">{{i.time}} </th>
+            <th scope="col "> <a class="text-light text-decoration-underline" href="{%url 'inventor:previous_request' i.id%}">عرض</a></th>
+
           </tr>
           {%endfor%}
+
         </tbody>
   </table>
-  {% if data.has_other_pages %}          
+  {% if paydatalist.has_other_pages %}          
   <div class="col-lg-12  p-2 ">
     <nav aria-label="Page navigation example text-center">
        <ul class="pagination">
               
-              {% if quntity.has_previous %}             
-                  <li class="page-item"><a class="page-link" href="?page={{ quntity.previous_page_number }}"> <</a></li>
+              {% if paydatalist.has_previous %}             
+                  <li class="page-item"><a class="page-link" href="?page={{ paydatalist.previous_page_number }}"> <</a></li>
               {% endif %}
               
-              {% for i in quntity.paginator.page_range  %}
+              {% for i in paydatalist.paginator.page_range  %}
                         <li class="page-item"><a class="page-link" href="?page={{i}}"><span>{{i}}</span></a></li>
               {% endfor %}
-              {% if quntity.has_next%}
-                  <li class="page-item"><a class="page-link" href="?page={{ quntity.next_page_number }}"> > </a></li>
+              {% if paydatalist.has_next%}
+                  <li class="page-item"><a class="page-link" href="?page={{ paydatalist.next_page_number }}"> > </a></li>
               {% endif %}
           </ul>
         </nav>
