@@ -34,12 +34,14 @@ class invntor(models.Model):
         verbose_name_plural = 'المخزن'
     def __str__(self) -> str:
         return self.importer
-
     def save(self, *args, **kwargs):
         # Decrease the quantity of the book when it is borrowed
-        self.items.quntity -= self.quntity
-        self.items.save()
-        super().save(*args, **kwargs)
+        if self.items.quntity> 0:
+            self.items.quntity -= self.quntity
+            self.items.save()
+            super().save(*args, **kwargs)
+        
+       
 
 
 

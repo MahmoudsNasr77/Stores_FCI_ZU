@@ -2,10 +2,11 @@
 <title>{% block title %}الاذونات السابقه{% endblock %}</title>
 
 {%block content%}
-<div class="container">
-<h1 class="text-center p-2">اذن الصرف</h1>
+<div class="container-fluid">
 <div class="row">
     <div class="col-lg-12">
+        <h1 class="text-center p-2">اذن الصرف</h1>
+
         <h3 class="text-muted p-3">اسم المستلم :<span class="text-dark">{{previous_request.payer_name}}</span></h3>
         <h3 class="text-muted p-3"> الكميه :<span class="text-dark">{{previous_request.quntity}}</span></h3>
         <h3 class="text-muted p-3"> العنصر :<span class="text-dark">{{previous_request.items}}</span></h3>
