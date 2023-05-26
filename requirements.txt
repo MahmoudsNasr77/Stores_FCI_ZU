@@ -68,7 +68,7 @@ sqlparse==0.4.2
 tablib==3.2.1
 tensorflow-io-gcs-filesystem==0.31.0
 tomli==2.0.1
-tornado==6.2
+tornado==6.3.2
 traitlets==5.8.1
 typing-extensions==4.3.0
 tzdata==2022.2
