@@ -1,1 +1,1 @@
-# Project to manage Stores of FCI_Zu 
+# Project to manage inventory of FCI_Zu 
